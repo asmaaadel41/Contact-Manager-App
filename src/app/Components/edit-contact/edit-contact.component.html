@@ -1,0 +1,57 @@
+<section class="contacts-section">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col">
+        <p class="h3 text-danger fw-bold">Add Contact</p>
+        <p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque ullam in ea quia nesciunt
+          animi dolor, sit accusantium provident earum? Sapiente iure voluptatem quibusdam minus iste! Rerum deleniti
+          magni necessitatibus.</p>
+      </div>
+    </div>
+
+    <!-- Create Contact Form-->
+    <div class="row">
+      <div class="col-sm-4">
+        <form (submit)="updateContact()">
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="contact.name" name="name" [value]="contact.name" class="form-control"
+              placeholder="Name">
+          </div>
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="contact.photo" name="photo" [value]="contact.photo" class="form-control"
+              placeholder="Photo Url">
+          </div>
+          <div class="mb-2">
+            <input type="email" [(ngModel)]="contact.email" name="email" [value]="contact.email" class="form-control"
+              placeholder="Email">
+          </div>
+          <div class="mb-2">
+            <input type="number" [(ngModel)]="contact.mobile" name="mobile" [value]="contact.mobile"
+              class="form-control" placeholder="Mobile Number">
+          </div>
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="contact.company" name="comppany" [value]="contact.company"
+              class="form-control" placeholder="Company">
+          </div>
+          <div class="mb-2">
+            <input type="text" [(ngModel)]="contact.title" name="title" [value]="contact.title" class="form-control"
+              placeholder="Title">
+          </div>
+          <div class="mb-2">
+            <select class="form-control" [(ngModel)]="contact.groupId" name="groupId" [value]="contact.groupId">
+              <option value="">Select A Group</option>
+              <option *ngFor="let group of groups" [value]="group.id">{{group.name}}</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <input type="submit" class="btn btn-danger" value="Update">
+            <a routerLink="/" class="btn btn-dark ms-2">Close</a>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-3">
+        <img class="contact-img rounded-circle" [src]="contact.photo" alt="">
+      </div>
+    </div>
+  </div>
+</section>
